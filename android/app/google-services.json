@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "290191457225",
+    "project_id": "patibuldum-98632",
+    "storage_bucket": "patibuldum-98632.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290191457225:android:b57b8ee227b24ed7dbc618",
+        "android_client_info": {
+          "package_name": "com.damlagenc.mobil_projem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290191457225-bsigsar7qi49mqu97sbbfe941dfdppq7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.damlagenc.mobil_projem",
+            "certificate_hash": "ff9e276495468e1a274dc6ffdeafabe30ebf415f"
+          }
+        },
+        {
+          "client_id": "290191457225-amakmvq5s3dbnt37t9rsfb2pmk9hjb20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD0ulUlPaIIiiay4I5iexDJWF9nRB2fAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290191457225-amakmvq5s3dbnt37t9rsfb2pmk9hjb20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
