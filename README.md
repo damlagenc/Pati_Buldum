@@ -1,2 +1,2 @@
 # Pati_Buldum
-Flutter ile geliştirilmeye devam eden hayvanşarı esas alan bir uygulamadır.
+Flutter ile geliştirilmeye devam eden hayvanları esas alan bir uygulamadır.
