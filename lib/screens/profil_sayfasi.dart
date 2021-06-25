@@ -13,7 +13,6 @@ class _ProfilSayfasiState extends State<ProfilSayfasi> {
 
   @override
   void initState() {
-    
     super.initState();
     _controllerUserName = TextEditingController();
   }
