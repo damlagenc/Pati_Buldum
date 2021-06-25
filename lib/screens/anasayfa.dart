@@ -1,170 +1,156 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobil_projem/viewmodel/user_model.dart';
+import 'package:provider/provider.dart';
 
-class AnasayfaPage extends StatelessWidget {
+class AnasayfaPage extends StatefulWidget {
+  @override
+  _AnasayfaPageState createState() => _AnasayfaPageState();
+}
+
+class _AnasayfaPageState extends State<AnasayfaPage> {
+  final User user;
+
+  _AnasayfaPageState({this.user});
   @override
   Widget build(BuildContext context) {
+    final _userModel = Provider.of<UserModel>(context);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepOrange.shade300,
-        title: Text("Anasayfa"),
-      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
+            children: [
               Container(
-                height: 40,
-                width: 390,
-                child: Text("Sahipleri Aranan Hayvanlar",
-                    style: TextStyle(color: Colors.white, fontSize: 20)),
                 padding: const EdgeInsets.all(8.0),
                 margin: EdgeInsets.all(3),
-                color: Colors.purple,
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade300,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(16),
+                  ),
+                ),
+                height: 40,
+                width: MediaQuery.of(context).size.width,
+                child: Text("Hoşgeldiniz ${_userModel.user.email}"),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Container(
-                    height: 250,
-                    width: 170,
-                    child: Text("Pet1",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20)),
                     padding: const EdgeInsets.all(8.0),
                     margin: EdgeInsets.all(3),
-                    color: Colors.purple.shade100,
+                    height: 260,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.teal,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(16),
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/golden.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent.withOpacity(0),
+                      ),
+                      child: Text("KÖPEKLER",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20)),
+                      onPressed: () {},
+                    ),
                   ),
                   Container(
-                    height: 250,
-                    width: 170,
-                    child: Text("Pet2",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20)),
                     padding: const EdgeInsets.all(8.0),
                     margin: EdgeInsets.all(3),
-                    color: Colors.purple.shade100,
+                    height: 260,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.teal,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(16),
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/sfenks.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent.withOpacity(0),
+                      ),
+                      child: Text("KEDİLER",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20)),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    margin: EdgeInsets.all(3),
+                    height: 260,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(16),
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/kus.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent.withOpacity(0),
+                      ),
+                      child: Text("KUŞLAR",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20)),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    margin: EdgeInsets.all(3),
+                    height: 260,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.teal,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(16),
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/tavsan.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent.withOpacity(0),
+                      ),
+                      child: Text("TAVŞANLAR",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20)),
+                      onPressed: () {},
+                    ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 15,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Container(
-                        height: 250,
-                        width: 170,
-                        child: Text("Pet3",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20)),
-                        padding: const EdgeInsets.all(8.0),
-                        margin: EdgeInsets.all(3),
-                        color: Colors.purple.shade100,
-                      ),
-                      Container(
-                        height: 250,
-                        width: 170,
-                        child: Text("Pet4",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20)),
-                        padding: const EdgeInsets.all(8.0),
-                        margin: EdgeInsets.all(3),
-                        color: Colors.purple.shade100,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Container(
-                        height: 250,
-                        width: 170,
-                        child: Text("Pet5",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20)),
-                        padding: const EdgeInsets.all(8.0),
-                        margin: EdgeInsets.all(3),
-                        color: Colors.purple.shade100,
-                      ),
-                      Container(
-                        height: 250,
-                        width: 170,
-                        child: Text("Pet6",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20)),
-                        padding: const EdgeInsets.all(8.0),
-                        margin: EdgeInsets.all(3),
-                        color: Colors.purple.shade100,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Container(
-                        height: 250,
-                        width: 170,
-                        child: Text("Pet7",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20)),
-                        padding: const EdgeInsets.all(8.0),
-                        margin: EdgeInsets.all(3),
-                        color: Colors.purple.shade100,
-                      ),
-                      Container(
-                        height: 250,
-                        width: 170,
-                        child: Text("Pet8",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20)),
-                        padding: const EdgeInsets.all(8.0),
-                        margin: EdgeInsets.all(3),
-                        color: Colors.purple.shade100,
-                      ),
-                    ],
-                  ),
-                ],
+                height: 50,
               ),
             ],
           ),

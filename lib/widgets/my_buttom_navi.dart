@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobil_projem/ui/widgets/tab_items.dart';
+import 'package:mobil_projem/widgets/tab_items.dart';
 
 class MyButtomNavigation extends StatelessWidget {
   const MyButtomNavigation(
@@ -39,7 +39,7 @@ class MyButtomNavigation extends StatelessWidget {
 
     return BottomNavigationBarItem(
       icon: Icon(olusturulacakTab.icon),
-      title: Text(olusturulacakTab.title),
+      label: (olusturulacakTab.title),
     );
   }
 }

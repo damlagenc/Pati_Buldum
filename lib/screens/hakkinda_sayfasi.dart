@@ -54,7 +54,7 @@ class _HakkindaSayfasiState extends State<HakkindaSayfasi> {
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              "Bu uygulama Dr. Öğretim Üyesi Ahmet Cevahir ÇINAR tarafından yürütülen 3301456 kodlu MOBİL PROGRAMLAMA dersi kapsamında 193301040 numaralı Damla GENÇ tarafından 30 Nisan 2021 günü yapılmıştır.",
+                              "Bu uygulama Dr. Öğretim Üyesi Ahmet Cevahir ÇINAR tarafından yürütülen 3301456 kodlu MOBİL PROGRAMLAMA dersi kapsamında 193301040 numaralı Damla GENÇ tarafından 25 Haziran 2021 günü yapılmıştır.",
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,

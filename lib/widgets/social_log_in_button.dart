@@ -1,4 +1,3 @@
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class SocialLoginButton extends StatelessWidget {
@@ -28,12 +27,17 @@ class SocialLoginButton extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 8),
       child: SizedBox(
         height: yukseklik,
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: onPressed,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(radius),
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(radius),
+                ),
+              ),
             ),
+            backgroundColor: MaterialStateProperty.all(butonColor),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -60,7 +64,6 @@ class SocialLoginButton extends StatelessWidget {
               ]
             ],
           ),
-          color: butonColor,
         ),
       ),
     );

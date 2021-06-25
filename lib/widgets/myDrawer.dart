@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobil_projem/screens/ayarlar_sayfasi.dart';
-import 'package:mobil_projem/screens/login_sayfasi.dart';
+import 'package:mobil_projem/screens/evcil_hayvanlar.dart';
 import 'package:mobil_projem/screens/mesajlar_sayfasi.dart';
 import 'package:mobil_projem/screens/profil_sayfasi.dart';
 
@@ -52,6 +52,20 @@ class _MyDrawerState extends State<MyDrawer> {
             indent: 10,
           ),
           ListTile(
+            leading: Icon(Icons.pets),
+            title: Text('Evcil Hayvanlar'),
+            trailing: Icon(Icons.arrow_forward),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => EvcilHayvanlar()));
+            },
+          ),
+          Divider(
+            color: Colors.purple,
+            height: 0,
+            indent: 10,
+          ),
+          ListTile(
             leading: Icon(Icons.account_circle),
             title: Text('Profil'),
             trailing: Icon(Icons.arrow_forward),
@@ -72,19 +86,6 @@ class _MyDrawerState extends State<MyDrawer> {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => AyarlarSayfasi()));
-            },
-          ),
-          Divider(
-            color: Colors.purple,
-            height: 0,
-            indent: 10,
-          ),
-          ListTile(
-            leading: Icon(Icons.logout),
-            title: Text('Çıkış'),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginSayfasi()));
             },
           ),
           Divider(

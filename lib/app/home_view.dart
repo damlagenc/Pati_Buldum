@@ -3,23 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mobil_projem/screens/anasayfa.dart';
 import 'package:mobil_projem/screens/kayiplar_sayfasi.dart';
-import 'package:mobil_projem/screens/pati_ekle.dart';
 import 'package:mobil_projem/screens/sahiplenme_sayfasi.dart';
-import 'package:mobil_projem/ui/widgets/myDrawer.dart';
-import 'package:mobil_projem/ui/widgets/my_buttom_navi.dart';
-import 'package:mobil_projem/ui/widgets/tab_items.dart';
+import 'package:mobil_projem/viewmodel/user_model.dart';
+import 'package:mobil_projem/widgets/myDrawer.dart';
+import 'package:mobil_projem/widgets/my_buttom_navi.dart';
+import 'package:mobil_projem/widgets/tab_items.dart';
+import 'package:provider/provider.dart';
 
-class HomeSayfasi extends StatefulWidget {
+class HomeView extends StatefulWidget {
   final User user;
 
-  HomeSayfasi({Key key, this.user}) : super(key: key);
+  const HomeView({Key key, this.user}) : super(key: key);
 
   @override
-  _HomeSayfasiState createState() => _HomeSayfasiState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomeSayfasiState extends State<HomeSayfasi> {
+class _HomeViewState extends State<HomeView> {
   TabItem _currentTab = TabItem.Anasayfa;
+  final User user;
+
+  _HomeViewState({this.user});
   Map<TabItem, Widget> tumSayfalar() {
     return {
       TabItem.Anasayfa: AnasayfaPage(),
@@ -33,22 +37,17 @@ class _HomeSayfasiState extends State<HomeSayfasi> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Pati Buldum"),
+        actions: [
+          TextButton(
+            child: Icon(
+              Icons.exit_to_app_outlined,
+              color: Colors.white,
+            ),
+            onPressed: () => _cikisYap(context),
+          ),
+        ],
       ),
       drawer: MyDrawer(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.white,
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => PatiEkle()));
-        },
-        tooltip: 'Fotoğraf Yükle',
-        child: const Icon(
-          Icons.add_a_photo,
-          color: Colors.purple,
-          size: 30,
-        ),
-      ),
       body: MyButtomNavigation(
         sayfaOlusturucu: tumSayfalar(),
         currentTab: _currentTab,
@@ -56,10 +55,15 @@ class _HomeSayfasiState extends State<HomeSayfasi> {
           setState(() {
             _currentTab = secilenTab;
           });
-
-          print("seçilen tab item: " + secilenTab.toString());
         },
       ),
     );
+  }
+
+  Future<bool> _cikisYap(BuildContext context) async {
+    final _userModel = Provider.of<UserModel>(context, listen: false);
+    bool sonuc = await _userModel.signOut();
+
+    return sonuc;
   }
 }
